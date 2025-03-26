@@ -6,7 +6,7 @@ on:
       - master
 jobs:
   build-and-deploy:
-    if: github.repository == 'AlmaLinux/wiki'
+    if: github.repository == 'metalefty/almalinux-wiki'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -16,7 +16,7 @@ jobs:
       uses: jenkey2011/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: AlmaLinux/wiki
+        TARGET_REPO: metalefty/almalinux-wiki 
         TARGET_BRANCH: gh-pages
         BUILD_SCRIPT: yarn && yarn docs:build
         BUILD_DIR: docs/.vuepress/dist/
